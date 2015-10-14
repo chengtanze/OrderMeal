@@ -1,0 +1,13 @@
+//
+//  Company.h
+//  OrderMeal
+//  公司管理
+//  Created by cheng on 15/9/14.
+//  Copyright (c) 2015年 cheng. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+
+@interface Company : NSObject
+
+@end
