@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="identifierMenuCell" id="uV1-e9-Ezm" customClass="MenuCollectionViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="140" height="140"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="140" height="140"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dA8-Vg-dW1">
+                        <rect key="frame" x="0.0" y="0.0" width="140" height="140"/>
+                    </imageView>
+                    <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L7v-7b-Pew">
+                        <rect key="frame" x="0.0" y="110" width="140" height="30"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="菜名" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wRc-vQ-a8w">
+                                <rect key="frame" x="5" y="6" width="28" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="价格" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q0R-I7-VTy">
+                                <rect key="frame" x="43" y="6" width="28" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <constraints>
+                            <constraint firstItem="wRc-vQ-a8w" firstAttribute="leading" secondItem="L7v-7b-Pew" secondAttribute="leading" constant="5" id="M9g-zY-WQ6"/>
+                            <constraint firstAttribute="centerY" secondItem="Q0R-I7-VTy" secondAttribute="centerY" id="X6x-yw-Mw6"/>
+                            <constraint firstAttribute="centerY" secondItem="wRc-vQ-a8w" secondAttribute="centerY" id="ph4-av-8Wv"/>
+                            <constraint firstItem="Q0R-I7-VTy" firstAttribute="leading" secondItem="wRc-vQ-a8w" secondAttribute="trailing" constant="10" id="qd0-Qc-p84"/>
+                            <constraint firstAttribute="height" constant="30" id="zK2-Cr-GKZ"/>
+                        </constraints>
+                    </view>
+                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c0b-Cp-s5r">
+                        <rect key="frame" x="118" y="8" width="14" height="22"/>
+                        <state key="normal" image="checkbox1_unchecked.png">
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <state key="selected" image="checkbox1_checked.png"/>
+                        <connections>
+                            <action selector="foodChoiceBtn:" destination="uV1-e9-Ezm" eventType="touchUpInside" id="QGg-gC-fgM"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            </view>
+            <constraints>
+                <constraint firstItem="dA8-Vg-dW1" firstAttribute="top" secondItem="uV1-e9-Ezm" secondAttribute="top" id="1AQ-xS-TxI"/>
+                <constraint firstAttribute="trailing" secondItem="L7v-7b-Pew" secondAttribute="trailing" id="DMA-AD-h4x"/>
+                <constraint firstAttribute="trailing" secondItem="dA8-Vg-dW1" secondAttribute="trailing" id="TvE-kO-XjV"/>
+                <constraint firstAttribute="trailing" secondItem="c0b-Cp-s5r" secondAttribute="trailing" constant="8" id="XmI-Wm-U67"/>
+                <constraint firstItem="L7v-7b-Pew" firstAttribute="leading" secondItem="uV1-e9-Ezm" secondAttribute="leading" id="YdZ-FT-CkF"/>
+                <constraint firstItem="c0b-Cp-s5r" firstAttribute="top" secondItem="uV1-e9-Ezm" secondAttribute="top" constant="8" id="oid-Sg-1tH"/>
+                <constraint firstAttribute="bottom" secondItem="L7v-7b-Pew" secondAttribute="bottom" id="tu2-WE-GGC"/>
+                <constraint firstItem="dA8-Vg-dW1" firstAttribute="leading" secondItem="uV1-e9-Ezm" secondAttribute="leading" id="yDa-G2-NRr"/>
+                <constraint firstAttribute="bottom" secondItem="dA8-Vg-dW1" secondAttribute="bottom" id="zS8-0K-fEh"/>
+            </constraints>
+            <size key="customSize" width="173" height="147"/>
+            <connections>
+                <outlet property="choiceBtn" destination="c0b-Cp-s5r" id="kx1-Bo-EbJ"/>
+                <outlet property="foodNameLabel" destination="wRc-vQ-a8w" id="OED-bN-n0c"/>
+                <outlet property="foodValueLable" destination="Q0R-I7-VTy" id="SJg-GJ-MO9"/>
+                <outlet property="menuImageView" destination="dA8-Vg-dW1" id="KmU-6J-eSf"/>
+            </connections>
+            <point key="canvasLocation" x="559" y="457"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="checkbox1_checked.png" width="14" height="14"/>
+        <image name="checkbox1_unchecked.png" width="14" height="14"/>
+    </resources>
+</document>

@@ -7,9 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PublicDefine.h"
+
+@protocol MenuSeleteDelegate <NSObject>
+
+-(void)selectCellIndex:(NSIndexPath*)indexPath;
+
+@end
 
 @interface MenuView : UIView
 
--(UIBarButtonItem *)createRightNaviItem;
+@property(weak, nonatomic) id<MenuSeleteDelegate> delegate;
 
 @end
