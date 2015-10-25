@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		14489D211BCFDB7C0026BB80 /* ic_launcher.png in Resources */ = {isa = PBXBuildFile; fileRef = 14489D201BCFDB7C0026BB80 /* ic_launcher.png */; };
 		14489D231BCFDE300026BB80 /* avatar_default.png in Resources */ = {isa = PBXBuildFile; fileRef = 14489D221BCFDE300026BB80 /* avatar_default.png */; };
+		14587F1B1BDBB3860012464A /* OrderHandlingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14587F1A1BDBB3860012464A /* OrderHandlingViewController.m */; };
+		14587F1E1BDBB7820012464A /* OrderHandlingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14587F1D1BDBB7820012464A /* OrderHandlingView.m */; };
+		14587F211BDBB99F0012464A /* OrderHandCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 14587F201BDBB99F0012464A /* OrderHandCollectionViewCell.m */; };
+		14587F231BDBB9B10012464A /* OrderHandCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14587F221BDBB9B10012464A /* OrderHandCollectionViewCell.xib */; };
+		14587F251BDBBDB30012464A /* OrderBackGroup.png in Resources */ = {isa = PBXBuildFile; fileRef = 14587F241BDBBDB30012464A /* OrderBackGroup.png */; };
 		146D2C031BCE8EB10081D543 /* MenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 146D2C021BCE8EB10081D543 /* MenuView.m */; };
 		146D2C091BCE8F790081D543 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 146D2C081BCE8F790081D543 /* MenuViewController.m */; };
 		147040871BA700AE007F6414 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 147040861BA700AE007F6414 /* main.m */; };
@@ -66,6 +71,14 @@
 /* Begin PBXFileReference section */
 		14489D201BCFDB7C0026BB80 /* ic_launcher.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_launcher.png; sourceTree = "<group>"; };
 		14489D221BCFDE300026BB80 /* avatar_default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = avatar_default.png; sourceTree = "<group>"; };
+		14587F191BDBB3860012464A /* OrderHandlingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderHandlingViewController.h; sourceTree = "<group>"; };
+		14587F1A1BDBB3860012464A /* OrderHandlingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderHandlingViewController.m; sourceTree = "<group>"; };
+		14587F1C1BDBB7820012464A /* OrderHandlingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderHandlingView.h; sourceTree = "<group>"; };
+		14587F1D1BDBB7820012464A /* OrderHandlingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderHandlingView.m; sourceTree = "<group>"; };
+		14587F1F1BDBB99F0012464A /* OrderHandCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderHandCollectionViewCell.h; sourceTree = "<group>"; };
+		14587F201BDBB99F0012464A /* OrderHandCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderHandCollectionViewCell.m; sourceTree = "<group>"; };
+		14587F221BDBB9B10012464A /* OrderHandCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderHandCollectionViewCell.xib; sourceTree = "<group>"; };
+		14587F241BDBBDB30012464A /* OrderBackGroup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OrderBackGroup.png; sourceTree = "<group>"; };
 		146D2C011BCE8EB10081D543 /* MenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuView.h; sourceTree = "<group>"; };
 		146D2C021BCE8EB10081D543 /* MenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuView.m; sourceTree = "<group>"; };
 		146D2C071BCE8F790081D543 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
@@ -198,6 +211,7 @@
 				14A36F481BD8C9A300B5DCF0 /* potato.jpg */,
 				14A36F491BD8C9A300B5DCF0 /* shrimp.jpg */,
 				14A36F4C1BD8CAAC00B5DCF0 /* fish.jpg */,
+				14587F241BDBBDB30012464A /* OrderBackGroup.png */,
 			);
 			path = public;
 			sourceTree = "<group>";
@@ -227,6 +241,11 @@
 				14D434581BD13659000C72F6 /* MenuCollectionViewCell.h */,
 				14D434591BD13659000C72F6 /* MenuCollectionViewCell.m */,
 				1482513B1BD77FB700E0DB20 /* MenuCollectionCell.xib */,
+				14587F1C1BDBB7820012464A /* OrderHandlingView.h */,
+				14587F1D1BDBB7820012464A /* OrderHandlingView.m */,
+				14587F1F1BDBB99F0012464A /* OrderHandCollectionViewCell.h */,
+				14587F201BDBB99F0012464A /* OrderHandCollectionViewCell.m */,
+				14587F221BDBB9B10012464A /* OrderHandCollectionViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -242,6 +261,8 @@
 				14A36F381BD8852200B5DCF0 /* OtherFoodViewController.m */,
 				14A36F411BD8BD3C00B5DCF0 /* MenuDetailsTableViewController.h */,
 				14A36F421BD8BD3C00B5DCF0 /* MenuDetailsTableViewController.m */,
+				14587F191BDBB3860012464A /* OrderHandlingViewController.h */,
+				14587F1A1BDBB3860012464A /* OrderHandlingViewController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -668,8 +689,10 @@
 				1482513C1BD77FB700E0DB20 /* MenuCollectionCell.xib in Resources */,
 				147040981BA700AE007F6414 /* LaunchScreen.xib in Resources */,
 				147040951BA700AE007F6414 /* Images.xcassets in Resources */,
+				14587F251BDBBDB30012464A /* OrderBackGroup.png in Resources */,
 				1482513F1BD7817F00E0DB20 /* checkbox1_checked.png in Resources */,
 				14489D211BCFDB7C0026BB80 /* ic_launcher.png in Resources */,
+				14587F231BDBB9B10012464A /* OrderHandCollectionViewCell.xib in Resources */,
 				14A36F4A1BD8C9A300B5DCF0 /* potato.jpg in Resources */,
 				148251401BD7817F00E0DB20 /* checkbox1_checked@2x.png in Resources */,
 				148251441BD7819500E0DB20 /* checkbox1_unchecked@2x.png in Resources */,
@@ -698,9 +721,11 @@
 				14A36F391BD8852200B5DCF0 /* OtherFoodViewController.m in Sources */,
 				1470408D1BA700AE007F6414 /* OrderMeal.xcdatamodeld in Sources */,
 				147040BF1BA70321007F6414 /* RootTabBarViewController.m in Sources */,
+				14587F1B1BDBB3860012464A /* OrderHandlingViewController.m in Sources */,
 				14A36F331BD8811C00B5DCF0 /* SCNavTabBarController.m in Sources */,
 				1470408A1BA700AE007F6414 /* AppDelegate.m in Sources */,
 				147040C81BA70803007F6414 /* Actor.m in Sources */,
+				14587F1E1BDBB7820012464A /* OrderHandlingView.m in Sources */,
 				147040D71BA708F0007F6414 /* RestaurantManager.m in Sources */,
 				147040901BA700AE007F6414 /* ViewController.m in Sources */,
 				146D2C091BCE8F790081D543 /* MenuViewController.m in Sources */,
@@ -708,6 +733,7 @@
 				147040C21BA707C1007F6414 /* LoginSystem.m in Sources */,
 				147040DA1BA70932007F6414 /* MenuManagement.m in Sources */,
 				147040871BA700AE007F6414 /* main.m in Sources */,
+				14587F211BDBB99F0012464A /* OrderHandCollectionViewCell.m in Sources */,
 				14A36F471BD8C1B600B5DCF0 /* Custom_ScrollImageView.m in Sources */,
 				14A36F361BD884ED00B5DCF0 /* MainFoodViewController.m in Sources */,
 				14A36F431BD8BD3C00B5DCF0 /* MenuDetailsTableViewController.m in Sources */,

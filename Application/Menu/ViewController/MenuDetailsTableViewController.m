@@ -17,8 +17,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-
+   
+    [self initLocalData];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -35,7 +35,7 @@
 -(void)viewDidLayoutSubviews{
 
     static BOOL bFirst = NO;
-    if (!bFirst) {
+    //if (!bFirst) {
         bFirst = YES;
         
         NSString *str1 = @"potato.jpg";
@@ -50,11 +50,30 @@
         self.srcollImage.delegate = self;
         [self.menuImageView addSubview:self.srcollImage];
         [_srcollImage upDataScrollViewPoint];
-    }
+   // }
 
 }
 
 -(void)ScrollImageViewdidSelectRowAtIndexPath:(NSInteger)index{
+    
+}
+
+-(void)initLocalData{
+    UITextBorderStyle borderStyle;
+    if (MenuModal_Show == _editModal) {
+        borderStyle = UITextBorderStyleNone;
+    }else{
+        borderStyle = UITextBorderStyleBezel;
+    }
+    
+    _foodNameTF.borderStyle = borderStyle;
+    _foodVauleTF.borderStyle = borderStyle;
+    _foodMakeTF.borderStyle = borderStyle;
+    _foodUnitTF.borderStyle = borderStyle;
+}
+
+-(void)setMenuDetailEditModal:(MenuDetailModal)editModal{
+
     
 }
 

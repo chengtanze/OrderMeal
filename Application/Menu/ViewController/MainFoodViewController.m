@@ -58,8 +58,9 @@
 -(void)selectCellIndex:(NSIndexPath*)indexPath{
     
     UIStoryboard * mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    UIViewController * showViewController = [mainStoryboard instantiateViewControllerWithIdentifier:@"MenuDetailsTableViewController"];
+    MenuDetailsTableViewController * showViewController = [mainStoryboard instantiateViewControllerWithIdentifier:@"MenuDetailsTableViewController"];
     
+    showViewController.editModal = MenuModal_Show;
     [self.navigationController pushViewController:showViewController animated:YES];
     
 }

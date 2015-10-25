@@ -8,12 +8,21 @@
 
 #import <UIKit/UIKit.h>
 
+
+typedef enum {
+    MenuModal_Show = 0,
+    MenuModal_Edit,
+}MenuDetailModal;
+
 @interface MenuDetailsTableViewController : UITableViewController
-@property (weak, nonatomic) IBOutlet UILabel *foodNameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *foodVauleLabel;
-@property (weak, nonatomic) IBOutlet UILabel *unitLabel;
-//@property (weak, nonatomic) IBOutlet UIView *menuImageView;
 @property (weak, nonatomic) IBOutlet UIView *menuImageView;
 
-@property (weak, nonatomic) IBOutlet UILabel *foodMakeLabel;
+@property (weak, nonatomic) IBOutlet UITextField *foodNameTF;
+@property (weak, nonatomic) IBOutlet UITextField *foodVauleTF;
+@property (weak, nonatomic) IBOutlet UITextField *foodMakeTF;
+@property (weak, nonatomic) IBOutlet UITextField *foodUnitTF;
+@property(assign, nonatomic) MenuDetailModal editModal;
+
+-(void)setMenuDetailEditModal:(MenuDetailModal)editModal;
+
 @end

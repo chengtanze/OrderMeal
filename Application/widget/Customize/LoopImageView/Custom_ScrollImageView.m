@@ -164,7 +164,7 @@ typedef enum
     
     NSInteger count[3] = {pre, cur, next};
     
-    NSLog(@"reLoadItem pre:%ld, cur:%ld, next:%ld", (long)pre, (long)cur, (long)next);
+    //NSLog(@"reLoadItem pre:%ld, cur:%ld, next:%ld", (long)pre, (long)cur, (long)next);
     
     for (int nIndex = 0; nIndex < 3; nIndex++) {
         UIImage * image = picViewArray[count[nIndex]];

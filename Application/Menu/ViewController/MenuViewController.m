@@ -10,7 +10,7 @@
 #import "SCNavTabBarController.h"
 #import "MainFoodViewController.h"
 #import "OtherFoodViewController.h"
-
+#import "OrderHandlingViewController.h"
 #import "MenuView.h"
 
 #define ORDERMEAL_ORDER_SPACE 10.0
@@ -50,9 +50,9 @@
     // Pass the selected object to the new view controller.
 }
 */
-
+// 30 d9 a3
 -(void)initViewData{
-    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:0.18 green:0.830 blue:0.572 alpha:1];
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:0.188 green:0.851 blue:0.639 alpha:1];
     
     self.navigationItem.leftBarButtonItem = [self createLeftNaviItem];
     
@@ -109,14 +109,13 @@
     NSLog(@"index");
 }
 
+
 - (IBAction)completeClick:(id)sender {
     NSLog(@"completeClick");
+    
+    OrderHandlingViewController * viewController = [[OrderHandlingViewController alloc]init];
+    
+    [self.navigationController pushViewController:viewController animated:YES];
+    
 }
-
-
-
-
-
-
-
 @end

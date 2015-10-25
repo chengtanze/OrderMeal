@@ -1,28 +1,26 @@
 //
-//  MenuView.m
+//  OrderHandlingView.m
 //  OrderMeal
 //
-//  Created by cheng on 15/10/14.
+//  Created by cheng on 15/10/24.
 //  Copyright (c) 2015年 cheng. All rights reserved.
 //
 
-#import "MenuView.h"
-
-#import "MenuCollectionViewCell.h"
+#import "OrderHandlingView.h"
+#import "OrderHandCollectionViewCell.h"
 
 #define ORDERMEAL_ORDER_SPACE 10.0
 #define ORDERMEAL_ORDER_HEADIMAGESIZE (30.0)
-#define kcellIdentifier @"identifierMenuCell"
+#define kcellIdentifier @"identifierOrderCell"
 
-
-@interface MenuView()<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
+@interface OrderHandlingView()<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 
 @property(nonatomic, strong) UICollectionView * menuCollectionView;
 @property(nonatomic, strong) UIImage * image;
+
 @end
 
-
-@implementation MenuView
+@implementation OrderHandlingView
 
 /*
 // Only override drawRect: if you perform custom drawing.
@@ -31,8 +29,6 @@
     // Drawing code
 }
 */
-
-
 -(id)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]) {
         self.backgroundColor = [UIColor whiteColor];
@@ -57,13 +53,15 @@
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc]init];
     [flowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
     //初始化collectionView
+    CGRect rect = self.bounds;
+    rect.size.height = 600;
     UICollectionView * menuCollectionView = [[UICollectionView alloc]initWithFrame:self.bounds collectionViewLayout:flowLayout];
     
     menuCollectionView.delegate = self;
     menuCollectionView.dataSource = self;
     
     //[menuCollectionView registerClass:[MenuCollectionViewCell class] forCellWithReuseIdentifier:kcellIdentifier];
-    [menuCollectionView registerNib:[UINib nibWithNibName:@"MenuCollectionCell" bundle:nil] forCellWithReuseIdentifier:kcellIdentifier];
+    [menuCollectionView registerNib:[UINib nibWithNibName:@"OrderHandCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:kcellIdentifier];
     
     menuCollectionView.backgroundColor = [UIColor whiteColor];
     return menuCollectionView;
@@ -95,19 +93,20 @@
 // The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    MenuCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kcellIdentifier forIndexPath:indexPath];
+    OrderHandCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kcellIdentifier forIndexPath:indexPath];
     
     if (!cell) {
-        cell = [[MenuCollectionViewCell alloc] initWithFrame:CGRectMake(0, 0, 80, 80)];
+        cell = [[OrderHandCollectionViewCell alloc] initWithFrame:CGRectMake(0, 0, 80, 80)];
     }
-
-
-    cell.menuImageView.image = [UIImage imageNamed:@"shrimp.jpg"];
-    cell.foodNameLabel.text = @"油焖大虾";
-    cell.foodValueLable.text = @"100元/份";
+    
+    //cell.im
+    
+//    cell.menuImageView.image = [UIImage imageNamed:@"shrimp.jpg"];
+//    cell.foodNameLabel.text = @"油焖大虾";
+//    cell.foodValueLable.text = @"100元/份";
     
     return cell;
-
+    
 }
 
 //每一个cell的大小
@@ -139,11 +138,11 @@
     {
         [_delegate selectCellIndex:indexPath];
     }
-
-//    MenuCollectionViewCell * cell = (MenuCollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
-//    if (nil != cell) {
-//        [cell selectMenuCell];
-//    }
+    
+    //    MenuCollectionViewCell * cell = (MenuCollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
+    //    if (nil != cell) {
+    //        [cell selectMenuCell];
+    //    }
 }
 
 

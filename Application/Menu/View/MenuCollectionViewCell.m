@@ -88,5 +88,6 @@
 
 - (IBAction)foodChoiceBtn:(id)sender {
     NSLog(@"btn");
+    [self selectMenuCell];
 }
 @end
