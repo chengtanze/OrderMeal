@@ -221,7 +221,7 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="油焖大虾" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pqo-wg-INS">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="油焖大虾" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pqo-wg-INS">
                                                     <rect key="frame" x="68" y="7" width="77" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
@@ -312,6 +312,16 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection headerTitle="照片" id="hPa-JL-AD9">
+                                <cells>
+                                    <tableViewCell hidden="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="101" id="XXN-L4-chS" customClass="PhotoGroupTableViewCell">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XXN-L4-chS" id="2Nq-d0-HOd">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="yt1-ev-v4c" id="GAI-RY-ERc"/>
@@ -324,6 +334,7 @@
                         <outlet property="foodUnitTF" destination="Gpx-a0-pYL" id="oa2-L2-eMj"/>
                         <outlet property="foodVauleTF" destination="KwM-Fr-eUL" id="3QT-k8-Yxc"/>
                         <outlet property="menuImageView" destination="qPb-zX-Tkd" id="ohG-rB-b2w"/>
+                        <outlet property="photoGroupView" destination="XXN-L4-chS" id="yjs-nt-jvZ"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="beM-VP-E2Y" userLabel="First Responder" sceneMemberID="firstResponder"/>

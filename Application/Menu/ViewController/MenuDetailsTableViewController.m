@@ -8,9 +8,27 @@
 
 #import "MenuDetailsTableViewController.h"
 #import "Custom_ScrollImageView.h"
+#import "MenuEditPopView.h"
+#import "Media_Photo.h"
 
-@interface MenuDetailsTableViewController () <CustromScrollImageViewTapDelegate>
+
+
+@implementation structPhotoInfo
+
+
+@end
+
+@interface MenuDetailsTableViewController () <getPhotoInfoDelegate, photoGroupDelegate, UITextFieldDelegate, CustromScrollImageViewTapDelegate, MenuDetailEditDelegate>
+{
+    Media_Photo * mediaPhoto;
+    NSInteger selectPhotoIndex;
+    
+}
 @property(strong, nonatomic)Custom_ScrollImageView * srcollImage;
+@property(nonatomic, strong)NSMutableArray *imageArray;
+@property(strong, nonatomic)UIBarButtonItem *editBarButton;
+@property(strong, nonatomic)UIBarButtonItem *completeBarButton;
+
 @end
 
 @implementation MenuDetailsTableViewController
@@ -19,6 +37,8 @@
     [super viewDidLoad];
    
     [self initLocalData];
+    
+    [self initLocalView];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -58,22 +78,200 @@
     
 }
 
+-(void)initLocalView{
+    self.editBarButton = [[UIBarButtonItem alloc]
+                                 initWithTitle:@"编辑"
+                                 style:UIBarButtonItemStylePlain
+                                 target:self
+                                 action:@selector(barBtnEditAction:)];
+    
+    self.completeBarButton= [[UIBarButtonItem alloc]
+                             initWithTitle:@"完成"
+                             style:UIBarButtonItemStylePlain
+                             target:self
+                             action:@selector(barBtnCompleteAction:)];
+    
+    self.navigationItem.rightBarButtonItem = self.editBarButton;
+}
+
+-(void)showBarButtonWithType:(MenuBarButtonType)type{
+    
+    if (BarButton_Edit == type) {
+        if (self.editBarButton != nil) {
+            self.navigationItem.rightBarButtonItem = self.editBarButton;
+        }
+    }
+    else{
+        if (self.completeBarButton != nil) {
+            self.navigationItem.rightBarButtonItem = self.completeBarButton;
+        }
+    }
+}
+
 -(void)initLocalData{
+    selectPhotoIndex = -1;
+    self.photoGroupView.delegate = self;
+    
+    self.imageArray = [[NSMutableArray alloc]initWithCapacity:5];
+    for (int index = 0; index < 5; index++) {
+        structPhotoInfo * imageInfo = [[structPhotoInfo alloc]init];
+        imageInfo.image = nil;
+        imageInfo.isPhoto = NO;
+        
+        NSMutableDictionary * dic = [[NSMutableDictionary alloc]initWithObjectsAndKeys:imageInfo, [NSString stringWithFormat:@"%d", index], nil];
+        [self.imageArray addObject:dic];
+    }
+    
+    
+    mediaPhoto = [[Media_Photo alloc]init];
+    if (mediaPhoto != nil) {
+        mediaPhoto.showInViewController = self;
+        mediaPhoto.delegate = self;
+    }
+    
     UITextBorderStyle borderStyle;
     if (MenuModal_Show == _editModal) {
         borderStyle = UITextBorderStyleNone;
     }else{
-        borderStyle = UITextBorderStyleBezel;
+        borderStyle = UITextBorderStyleRoundedRect;
     }
     
     _foodNameTF.borderStyle = borderStyle;
     _foodVauleTF.borderStyle = borderStyle;
     _foodMakeTF.borderStyle = borderStyle;
     _foodUnitTF.borderStyle = borderStyle;
+    
+    self.foodNameTF.delegate = self;
+    self.foodVauleTF.delegate = self;
+    self.foodMakeTF.delegate = self;
+    self.foodUnitTF.delegate = self;
 }
 
 -(void)setMenuDetailEditModal:(MenuDetailModal)editModal{
 
+    
+}
+
+-(void)barBtnEditAction:(id)sender{
+    NSLog(@"barBtnAction");
+    
+    
+    MenuEditPopView * pop = [[MenuEditPopView alloc]initWithNibName:@"MenuEditPopView"];
+    pop.delegate = self;
+    
+    [pop showInView:self.view];
+    
+    
+}
+
+-(void)barBtnCompleteAction:(id)sender{
+    NSLog(@"barBtnCompleteAction");
+    
+    [self showBarButtonWithType:BarButton_Edit];
+}
+
+
+-(void)editMenuClick{
+    NSLog(@"editMenuClick");
+    
+    _editModal = MenuModal_Edit;
+    _foodNameTF.borderStyle = UITextBorderStyleRoundedRect;
+    _foodVauleTF.borderStyle = UITextBorderStyleRoundedRect;
+    _foodMakeTF.borderStyle = UITextBorderStyleRoundedRect;
+    _foodUnitTF.borderStyle = UITextBorderStyleRoundedRect;
+    
+    self.photoGroupView.hidden = NO;
+    
+    [self showBarButtonWithType:BarButton_Complete];
+    
+}
+
+-(void)delMenuClick{
+    NSLog(@"delMenuClick");
+}
+
+#pragma mark - TextField delegate
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
+{
+    BOOL bRet = YES;
+    
+    if (MenuModal_Show == _editModal)
+        bRet = NO;
+
+    return bRet;
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField*)textField{
+    
+    if ([self.foodNameTF isFirstResponder])
+    {
+        [self.foodVauleTF becomeFirstResponder];
+    }
+    else if([self.foodVauleTF isFirstResponder])
+    {
+        [self.foodUnitTF becomeFirstResponder];
+    }
+    else if([self.foodUnitTF isFirstResponder])
+    {
+        [self.foodMakeTF becomeFirstResponder];
+    }
+    else if([self.foodMakeTF isFirstResponder])
+    {
+        [self.foodMakeTF resignFirstResponder];
+    }
+
+    
+    return YES;
+}
+
+-(void)selectPhotoIndex:(NSInteger)index{
+    selectPhotoIndex = index;
+    
+    NSDictionary * item = self.imageArray[selectPhotoIndex];
+    NSString * key = [NSString stringWithFormat:@"%ld", (long)selectPhotoIndex];
+    structPhotoInfo * info = [item objectForKey:key];
+    BOOL isPhoto = info.isPhoto;
+    if (isPhoto) {
+        //判断当前控件背景是默认还是用户拍摄的照片
+        
+//        UIStoryboard * mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//        GoodsPhotoViewController * infoView = [mainStoryboard instantiateViewControllerWithIdentifier:@"GoodsPhotoView"];
+//        
+//        infoView.photoImage = info.image;
+//        
+//        
+//        [self.navigationController pushViewController:infoView animated:YES];
+//        
+//        [infoView updatePhoto];
+    }
+    else{
+
+        
+        [mediaPhoto chooseImage];
+    }
+}
+
+#pragma mark - Media_Photo delegate
+-(void)getPhoto:(UIImage *)image{
+    
+    NSMutableDictionary * item = self.imageArray[selectPhotoIndex];
+    NSString * key = [NSString stringWithFormat:@"%ld", (long)selectPhotoIndex];
+    structPhotoInfo * info = [item objectForKey:key];
+    info.image = image;
+    info.isPhoto = YES;
+    
+    
+    //    NSString * key = [NSString stringWithFormat:@"%ld", (long)selectPhotoIndex];
+    //    structPhotoInfo * info = [[structPhotoInfo alloc]init];
+    //    info.image = image;
+    //    info.isPhoto = YES;
+    //    NSDictionary * item = [[NSDictionary alloc]initWithObjectsAndKeys:info,key, nil];
+    
+    
+    //    [self.imageArray addObject:item];
+    
+    [_photoGroupView setPhoto:image byIndex:selectPhotoIndex];
+    
     
 }
 

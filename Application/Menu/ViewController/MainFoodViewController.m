@@ -60,7 +60,7 @@
     UIStoryboard * mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     MenuDetailsTableViewController * showViewController = [mainStoryboard instantiateViewControllerWithIdentifier:@"MenuDetailsTableViewController"];
     
-    showViewController.editModal = MenuModal_Show;
+    showViewController.editModal = MenuModal_Show;//UITextBorderStyleRoundedRect;
     [self.navigationController pushViewController:showViewController animated:YES];
     
 }

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="WAa-WH-aGm" customClass="MenuEditPopView">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rja-QE-oOH">
+                    <rect key="frame" x="10" y="550" width="580" height="30"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <state key="normal" title="取消">
+                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="cancleClick:" destination="WAa-WH-aGm" eventType="touchUpInside" id="4LS-qU-CNR"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VR2-mD-Rcb">
+                    <rect key="frame" x="10" y="512" width="580" height="30"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <state key="normal" title="删除">
+                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="cancleClick:" destination="WAa-WH-aGm" eventType="touchUpInside" id="Pcg-dw-jv2"/>
+                        <action selector="delClick:" destination="WAa-WH-aGm" eventType="touchUpInside" id="Krf-C1-beL"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XfE-Jn-pqM">
+                    <rect key="frame" x="10" y="474" width="580" height="30"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <state key="normal" title="修改">
+                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="cancleClick:" destination="WAa-WH-aGm" eventType="touchUpInside" id="VfQ-BZ-BiF"/>
+                        <action selector="editClick:" destination="WAa-WH-aGm" eventType="touchUpInside" id="qV3-8z-3NW"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="rja-QE-oOH" secondAttribute="trailing" constant="10" id="5KJ-Bj-JHI"/>
+                <constraint firstAttribute="centerX" secondItem="rja-QE-oOH" secondAttribute="centerX" id="BuE-6B-6tj"/>
+                <constraint firstItem="rja-QE-oOH" firstAttribute="leading" secondItem="WAa-WH-aGm" secondAttribute="leading" constant="10" id="Ehc-yg-b9Y"/>
+                <constraint firstAttribute="bottom" secondItem="rja-QE-oOH" secondAttribute="bottom" constant="20" id="Hsm-Y6-K9N"/>
+                <constraint firstAttribute="centerX" secondItem="VR2-mD-Rcb" secondAttribute="centerX" id="LRE-ij-XS6"/>
+                <constraint firstAttribute="trailing" secondItem="rja-QE-oOH" secondAttribute="trailing" constant="10" id="O1k-b0-IvU"/>
+                <constraint firstItem="VR2-mD-Rcb" firstAttribute="leading" secondItem="rja-QE-oOH" secondAttribute="leading" id="Pbc-qB-a1m"/>
+                <constraint firstItem="VR2-mD-Rcb" firstAttribute="trailing" secondItem="XfE-Jn-pqM" secondAttribute="trailing" id="Pmf-c9-PmU"/>
+                <constraint firstItem="rja-QE-oOH" firstAttribute="leading" secondItem="WAa-WH-aGm" secondAttribute="leading" constant="10" id="SQ0-Uj-sX1"/>
+                <constraint firstAttribute="centerX" secondItem="rja-QE-oOH" secondAttribute="centerX" id="Xzf-Wa-FgS"/>
+                <constraint firstAttribute="centerX" secondItem="XfE-Jn-pqM" secondAttribute="centerX" id="cyh-0S-mFB"/>
+                <constraint firstItem="rja-QE-oOH" firstAttribute="top" secondItem="VR2-mD-Rcb" secondAttribute="bottom" constant="8" id="eEy-ic-2nu"/>
+                <constraint firstItem="VR2-mD-Rcb" firstAttribute="leading" secondItem="XfE-Jn-pqM" secondAttribute="leading" id="iUB-Va-qYz"/>
+                <constraint firstItem="VR2-mD-Rcb" firstAttribute="top" secondItem="XfE-Jn-pqM" secondAttribute="bottom" constant="8" id="lOO-P9-ieD"/>
+                <constraint firstItem="VR2-mD-Rcb" firstAttribute="trailing" secondItem="rja-QE-oOH" secondAttribute="trailing" id="yh2-zh-SYF"/>
+            </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="5KJ-Bj-JHI"/>
+                    <exclude reference="SQ0-Uj-sX1"/>
+                </mask>
+            </variation>
+            <point key="canvasLocation" x="546" y="184"/>
+        </view>
+    </objects>
+</document>

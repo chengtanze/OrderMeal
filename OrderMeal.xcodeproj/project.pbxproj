@@ -53,6 +53,13 @@
 		14A36F4A1BD8C9A300B5DCF0 /* potato.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 14A36F481BD8C9A300B5DCF0 /* potato.jpg */; };
 		14A36F4B1BD8C9A300B5DCF0 /* shrimp.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 14A36F491BD8C9A300B5DCF0 /* shrimp.jpg */; };
 		14A36F4D1BD8CAAC00B5DCF0 /* fish.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 14A36F4C1BD8CAAC00B5DCF0 /* fish.jpg */; };
+		14A4337C1BDDC89700A7AF3A /* CustomBasePopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A4337B1BDDC89700A7AF3A /* CustomBasePopView.m */; };
+		14A4337F1BDDD12C00A7AF3A /* MenuEditPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A4337E1BDDD12C00A7AF3A /* MenuEditPopView.m */; };
+		14A433811BDDD19100A7AF3A /* MenuEditPopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14A433801BDDD19100A7AF3A /* MenuEditPopView.xib */; };
+		14A433851BDE58D900A7AF3A /* PhotoGroupTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A433841BDE58D900A7AF3A /* PhotoGroupTableViewCell.m */; };
+		14A433881BDE5A8A00A7AF3A /* Media_Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A433871BDE5A8A00A7AF3A /* Media_Photo.m */; };
+		14A4338B1BDE617F00A7AF3A /* ic_add_pic_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 14A433891BDE617F00A7AF3A /* ic_add_pic_normal.png */; };
+		14A4338C1BDE617F00A7AF3A /* ic_add_pic_pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 14A4338A1BDE617F00A7AF3A /* ic_add_pic_pressed.png */; };
 		14D4345A1BD13659000C72F6 /* MenuCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 14D434591BD13659000C72F6 /* MenuCollectionViewCell.m */; };
 		14FBCE851BA8552B00F23D78 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FBCE841BA8552B00F23D78 /* LoginViewController.m */; };
 		14FBCE881BA8572C00F23D78 /* LoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FBCE871BA8572C00F23D78 /* LoginView.m */; };
@@ -149,6 +156,17 @@
 		14A36F481BD8C9A300B5DCF0 /* potato.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = potato.jpg; sourceTree = "<group>"; };
 		14A36F491BD8C9A300B5DCF0 /* shrimp.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = shrimp.jpg; sourceTree = "<group>"; };
 		14A36F4C1BD8CAAC00B5DCF0 /* fish.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = fish.jpg; sourceTree = "<group>"; };
+		14A4337A1BDDC89700A7AF3A /* CustomBasePopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomBasePopView.h; path = Application/widget/Customize/PopView/CustomBasePopView.h; sourceTree = SOURCE_ROOT; };
+		14A4337B1BDDC89700A7AF3A /* CustomBasePopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomBasePopView.m; path = Application/widget/Customize/PopView/CustomBasePopView.m; sourceTree = SOURCE_ROOT; };
+		14A4337D1BDDD12C00A7AF3A /* MenuEditPopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuEditPopView.h; sourceTree = "<group>"; };
+		14A4337E1BDDD12C00A7AF3A /* MenuEditPopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuEditPopView.m; sourceTree = "<group>"; };
+		14A433801BDDD19100A7AF3A /* MenuEditPopView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuEditPopView.xib; sourceTree = "<group>"; };
+		14A433831BDE58D900A7AF3A /* PhotoGroupTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoGroupTableViewCell.h; sourceTree = "<group>"; };
+		14A433841BDE58D900A7AF3A /* PhotoGroupTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoGroupTableViewCell.m; sourceTree = "<group>"; };
+		14A433861BDE5A8A00A7AF3A /* Media_Photo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Media_Photo.h; sourceTree = "<group>"; };
+		14A433871BDE5A8A00A7AF3A /* Media_Photo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Media_Photo.m; sourceTree = "<group>"; };
+		14A433891BDE617F00A7AF3A /* ic_add_pic_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_add_pic_normal.png; sourceTree = "<group>"; };
+		14A4338A1BDE617F00A7AF3A /* ic_add_pic_pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_add_pic_pressed.png; sourceTree = "<group>"; };
 		14D434581BD13659000C72F6 /* MenuCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuCollectionViewCell.h; sourceTree = "<group>"; };
 		14D434591BD13659000C72F6 /* MenuCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuCollectionViewCell.m; sourceTree = "<group>"; };
 		14FBCE831BA8552B00F23D78 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
@@ -202,6 +220,8 @@
 		14489D1F1BCFDB6D0026BB80 /* public */ = {
 			isa = PBXGroup;
 			children = (
+				14A433891BDE617F00A7AF3A /* ic_add_pic_normal.png */,
+				14A4338A1BDE617F00A7AF3A /* ic_add_pic_pressed.png */,
 				148251411BD7819500E0DB20 /* checkbox1_unchecked.png */,
 				148251421BD7819500E0DB20 /* checkbox1_unchecked@2x.png */,
 				1482513D1BD7817F00E0DB20 /* checkbox1_checked.png */,
@@ -263,6 +283,9 @@
 				14A36F421BD8BD3C00B5DCF0 /* MenuDetailsTableViewController.m */,
 				14587F191BDBB3860012464A /* OrderHandlingViewController.h */,
 				14587F1A1BDBB3860012464A /* OrderHandlingViewController.m */,
+				14A4337D1BDDD12C00A7AF3A /* MenuEditPopView.h */,
+				14A4337E1BDDD12C00A7AF3A /* MenuEditPopView.m */,
+				14A433801BDDD19100A7AF3A /* MenuEditPopView.xib */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -533,6 +556,8 @@
 		14A36F2E1BD880D000B5DCF0 /* Customize */ = {
 			isa = PBXGroup;
 			children = (
+				14A433821BDE58D900A7AF3A /* PhotoGroup */,
+				14A433791BDDC5CA00A7AF3A /* PopView */,
 				14A36F441BD8C1B600B5DCF0 /* LoopImageView */,
 			);
 			path = Customize;
@@ -566,6 +591,27 @@
 				14A36F461BD8C1B600B5DCF0 /* Custom_ScrollImageView.m */,
 			);
 			path = LoopImageView;
+			sourceTree = "<group>";
+		};
+		14A433791BDDC5CA00A7AF3A /* PopView */ = {
+			isa = PBXGroup;
+			children = (
+				14A4337A1BDDC89700A7AF3A /* CustomBasePopView.h */,
+				14A4337B1BDDC89700A7AF3A /* CustomBasePopView.m */,
+			);
+			name = PopView;
+			path = LoopImageView/PopView;
+			sourceTree = "<group>";
+		};
+		14A433821BDE58D900A7AF3A /* PhotoGroup */ = {
+			isa = PBXGroup;
+			children = (
+				14A433831BDE58D900A7AF3A /* PhotoGroupTableViewCell.h */,
+				14A433841BDE58D900A7AF3A /* PhotoGroupTableViewCell.m */,
+				14A433861BDE5A8A00A7AF3A /* Media_Photo.h */,
+				14A433871BDE5A8A00A7AF3A /* Media_Photo.m */,
+			);
+			path = PhotoGroup;
 			sourceTree = "<group>";
 		};
 		14FBCE7F1BA8551000F23D78 /* Login */ = {
@@ -688,13 +734,16 @@
 				147040931BA700AE007F6414 /* Main.storyboard in Resources */,
 				1482513C1BD77FB700E0DB20 /* MenuCollectionCell.xib in Resources */,
 				147040981BA700AE007F6414 /* LaunchScreen.xib in Resources */,
+				14A4338C1BDE617F00A7AF3A /* ic_add_pic_pressed.png in Resources */,
 				147040951BA700AE007F6414 /* Images.xcassets in Resources */,
 				14587F251BDBBDB30012464A /* OrderBackGroup.png in Resources */,
 				1482513F1BD7817F00E0DB20 /* checkbox1_checked.png in Resources */,
 				14489D211BCFDB7C0026BB80 /* ic_launcher.png in Resources */,
+				14A433811BDDD19100A7AF3A /* MenuEditPopView.xib in Resources */,
 				14587F231BDBB9B10012464A /* OrderHandCollectionViewCell.xib in Resources */,
 				14A36F4A1BD8C9A300B5DCF0 /* potato.jpg in Resources */,
 				148251401BD7817F00E0DB20 /* checkbox1_checked@2x.png in Resources */,
+				14A4338B1BDE617F00A7AF3A /* ic_add_pic_normal.png in Resources */,
 				148251441BD7819500E0DB20 /* checkbox1_unchecked@2x.png in Resources */,
 				14A36F4D1BD8CAAC00B5DCF0 /* fish.jpg in Resources */,
 				148251431BD7819500E0DB20 /* checkbox1_unchecked.png in Resources */,
@@ -715,6 +764,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14A433881BDE5A8A00A7AF3A /* Media_Photo.m in Sources */,
 				147040DD1BA70946007F6414 /* OrderManagement.m in Sources */,
 				147040D11BA70873007F6414 /* Chefs.m in Sources */,
 				147040E01BA70976007F6414 /* Payment.m in Sources */,
@@ -725,6 +775,7 @@
 				14A36F331BD8811C00B5DCF0 /* SCNavTabBarController.m in Sources */,
 				1470408A1BA700AE007F6414 /* AppDelegate.m in Sources */,
 				147040C81BA70803007F6414 /* Actor.m in Sources */,
+				14A4337C1BDDC89700A7AF3A /* CustomBasePopView.m in Sources */,
 				14587F1E1BDBB7820012464A /* OrderHandlingView.m in Sources */,
 				147040D71BA708F0007F6414 /* RestaurantManager.m in Sources */,
 				147040901BA700AE007F6414 /* ViewController.m in Sources */,
@@ -737,8 +788,10 @@
 				14A36F471BD8C1B600B5DCF0 /* Custom_ScrollImageView.m in Sources */,
 				14A36F361BD884ED00B5DCF0 /* MainFoodViewController.m in Sources */,
 				14A36F431BD8BD3C00B5DCF0 /* MenuDetailsTableViewController.m in Sources */,
+				14A4337F1BDDD12C00A7AF3A /* MenuEditPopView.m in Sources */,
 				147040C51BA707EC007F6414 /* Company.m in Sources */,
 				147040CE1BA70842007F6414 /* Waiter.m in Sources */,
+				14A433851BDE58D900A7AF3A /* PhotoGroupTableViewCell.m in Sources */,
 				14FBCE851BA8552B00F23D78 /* LoginViewController.m in Sources */,
 				146D2C031BCE8EB10081D543 /* MenuView.m in Sources */,
 				14A36F3D1BD8872600B5DCF0 /* SCNavTabBar.m in Sources */,
