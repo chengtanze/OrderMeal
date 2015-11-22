@@ -7,6 +7,7 @@
 //
 
 #import "Custom_ScrollImageView.h"
+#import "UIImageView+AFNetworking.h"
 
 typedef enum
 {
@@ -46,7 +47,19 @@ typedef enum
     return self;
 }
 
--(id)initWithFrame:(CGRect)frame picArray:(NSArray *)array{
+-(id)initWithFrame:(CGRect)frame picArray:(NSArray *)array type:(NSUInteger)picType{
+    if (self = [super initWithFrame:frame]) {
+        currIndex = 0;
+        direction = enum_UnKnow;
+        _picType = picType;
+        self.picPathArray = [[NSMutableArray alloc]initWithArray:array];
+        maxPicCount = array.count;
+        [self initSubView];
+    }
+    return self;
+}
+
+-(id)initWithFrame:(CGRect)frame picArray:(NSArray *)array {
     if (self = [super initWithFrame:frame]) {
         currIndex = 0;
         direction = enum_UnKnow;
@@ -77,13 +90,16 @@ typedef enum
     //翻页效果
     scrollview.pagingEnabled = YES;
     
-    //加载图片
-    for (int nIndex = 0; nIndex < maxPicCount; nIndex++) {
-        NSString *str = _picPathArray[nIndex];
-        UIImage * image = [UIImage imageNamed:str];
-        
-        [picViewArray addObject:image];
+    if (_picType == 0) {
+        //加载图片
+        for (int nIndex = 0; nIndex < maxPicCount; nIndex++) {
+            NSString *str = _picPathArray[nIndex];
+            UIImage * image = [UIImage imageNamed:str];
+            
+            [picViewArray addObject:image];
+        }
     }
+
     
     //由于最小都要创建3个ImageView 所以当显示的图片小于3时 还是按3个创建
     NSInteger picCount;
@@ -167,17 +183,26 @@ typedef enum
     //NSLog(@"reLoadItem pre:%ld, cur:%ld, next:%ld", (long)pre, (long)cur, (long)next);
     
     for (int nIndex = 0; nIndex < 3; nIndex++) {
-        UIImage * image = picViewArray[count[nIndex]];
-        
+        UIImage * image;
+
         CGRect rect = CGRectMake(MainScreenSize.width * nIndex, 0, MainScreenSize.width, MainScreenSize.height);
-        
-        //NSLog(@"reLoadItem View%d point.x = %f", nIndex, MainScreenSize.width * nIndex);
-        
         UIImageView * imageView = [[UIImageView alloc]initWithFrame:rect];
         
         imageView.userInteractionEnabled = YES;
         imageView.backgroundColor = [UIColor blackColor];
-        imageView.image = image;
+        
+        if (self.picType == 0) {
+            image = picViewArray[count[nIndex]];
+            imageView.image = image;
+        }
+        else{
+            if(_picPathArray.count > 0){
+            
+                NSURL * url = [[NSURL alloc]initWithString:_picPathArray[count[nIndex]]];
+                [imageView setImageWithURL:url];
+            }
+        }
+        
         imageView.contentMode = UIViewContentModeScaleToFill;//UIViewContentModeScaleAspectFit;
         imageView.tag = cur;
         //[imageViewArray addObject:imageView];

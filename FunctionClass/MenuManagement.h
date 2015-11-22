@@ -10,4 +10,6 @@
 
 @interface MenuManagement : NSObject
 
+-(BOOL)upLoadNewMenuData:(NSDictionary *)dicMenu;
+
 @end

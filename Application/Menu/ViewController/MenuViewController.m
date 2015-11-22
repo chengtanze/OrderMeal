@@ -12,6 +12,9 @@
 #import "OtherFoodViewController.h"
 #import "OrderHandlingViewController.h"
 #import "MenuView.h"
+#import "MenuDetailsTableViewController.h"
+#import "ApplyCourierController.h"
+#import "WWSideslipViewController.h"
 
 #define ORDERMEAL_ORDER_SPACE 10.0
 #define ORDERMEAL_ORDER_HEADIMAGESIZE (30.0)
@@ -19,6 +22,9 @@
 @interface MenuViewController () 
 
 @property(nonatomic, strong)MenuView * menuView;
+@property(nonatomic, strong)MainFoodViewController * mainFoodViewController;
+@property(nonatomic, strong)OtherFoodViewController * otherFoodViewController;
+
 
 - (IBAction)completeClick:(id)sender;
 
@@ -56,6 +62,8 @@
     
     self.navigationItem.leftBarButtonItem = [self createLeftNaviItem];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showApplyController) name:@"showApplyController" object:nil];
+    
     [self initNavBar];
     
 }
@@ -69,6 +77,10 @@
     OtherFoodViewController * twoViewController = [[OtherFoodViewController alloc]init];
     twoViewController.title = @"其他";
     
+    self.mainFoodViewController = oneViewController;
+    self.otherFoodViewController = twoViewController;
+    
+    self.delegate = oneViewController;
     
     SCNavTabBarController *navTabBarController = [[SCNavTabBarController alloc] init];
     navTabBarController.subViewControllers = @[oneViewController, twoViewController];
@@ -107,15 +119,51 @@
 {
     //处理单击操作
     NSLog(@"index");
+    
+    WWSideslipViewController * sides = [WWSideslipViewController sharedInstance:nil andMainView:nil andRightView:nil andBackgroundImage:nil];
+ 
+    [sides showLeftView];
 }
 
 
 - (IBAction)completeClick:(id)sender {
     NSLog(@"completeClick");
+ 
+    //管理员权限 添加菜单
+//    UIStoryboard * mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//    MenuDetailsTableViewController * showViewController = [mainStoryboard instantiateViewControllerWithIdentifier:@"MenuDetailsTableViewController"];
+//    
+//    showViewController.editModal = MenuModal_Add;
+//    
+//    
+//    [self.navigationController pushViewController:showViewController animated:YES];
     
-    OrderHandlingViewController * viewController = [[OrderHandlingViewController alloc]init];
-    
-    [self.navigationController pushViewController:viewController animated:YES];
+    if (_delegate != nil && [self.delegate respondsToSelector:@selector(selectButtonType:)]) {
+        [self.delegate selectButtonType:MainMenu_OrderComplete];
+    }
+
+    //服务员权限 点餐完成
+//    OrderHandlingViewController * viewController = [[OrderHandlingViewController alloc]init];
+//    
+//    viewController.selectOrderMenuList = self.menuView.userSelectMenuList;
+//    
+//    [self.navigationController pushViewController:viewController animated:YES];
     
 }
+
+-(BOOL)createOrder{
+    
+    BOOL bRet = NO;
+    
+    return bRet;
+}
+
+-(void)showApplyController{
+    UIStoryboard * mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    ApplyCourierController * info = [mainStoryboard instantiateViewControllerWithIdentifier:@"ApplyCourierController"];
+
+    [self.navigationController pushViewController:info animated:YES];
+}
+
+
 @end

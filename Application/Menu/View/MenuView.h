@@ -18,5 +18,7 @@
 @interface MenuView : UIView
 
 @property(weak, nonatomic) id<MenuSeleteDelegate> delegate;
-
+@property(strong, nonatomic)NSArray * arrayMenuListData;
+@property(strong, nonatomic)NSMutableArray * userSelectMenuList;
+-(void)upDateCollectionView;
 @end

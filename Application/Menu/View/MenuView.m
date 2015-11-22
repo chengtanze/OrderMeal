@@ -9,13 +9,14 @@
 #import "MenuView.h"
 
 #import "MenuCollectionViewCell.h"
+#import "UIImageView+AFNetworking.h"
 
 #define ORDERMEAL_ORDER_SPACE 10.0
 #define ORDERMEAL_ORDER_HEADIMAGESIZE (30.0)
 #define kcellIdentifier @"identifierMenuCell"
 
 
-@interface MenuView()<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
+@interface MenuView()<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, MenuCollectionCellDelegate>
 
 @property(nonatomic, strong) UICollectionView * menuCollectionView;
 @property(nonatomic, strong) UIImage * image;
@@ -45,11 +46,16 @@
 
 -(void)initLocalView{
     self.menuCollectionView = [self createCollectionView];
-    
+    self.userSelectMenuList = [[NSMutableArray alloc]initWithCapacity:10];
     [self addSubview:self.menuCollectionView];
+    
 }
 
-
+-(void)upDateCollectionView{
+    
+    [self.menuCollectionView reloadData];
+    
+}
 
 
 -(UICollectionView *)createCollectionView{
@@ -82,7 +88,12 @@
 //item个数
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 10;
+    NSLog(@"%@",_arrayMenuListData );
+    if (self.arrayMenuListData != nil && self.arrayMenuListData != [NSNull null]) {
+        NSLog(@"count :%ld", self.arrayMenuListData.count);
+        return self.arrayMenuListData.count;
+    }
+    return  0;
     
 }
 
@@ -100,11 +111,36 @@
     if (!cell) {
         cell = [[MenuCollectionViewCell alloc] initWithFrame:CGRectMake(0, 0, 80, 80)];
     }
+    
+    
+    cell.menuImageView.image = nil;
+    [cell choiceMenu:NO];
+
+    if (self.arrayMenuListData != nil) {
+        cell.delegate = self;
+        cell.cellIndexPath = indexPath;
+        NSLog(@"%ld", (long)indexPath.row);
+        NSDictionary * dicData = self.arrayMenuListData[indexPath.row];
+        if (dicData != nil) {
+            
+            cell.foodNameLabel.text = [dicData valueForKey:@"name"];
+            cell.foodValueLable.text = [dicData valueForKey:@"price"];
+            NSArray * dicImage = [dicData valueForKey:@"pic"];
+            if (dicImage != nil ) {
+                if([dicImage respondsToSelector:@selector(objectAtIndex:)]){
+                   
+                    NSString * strImage =  [dicImage valueForKey:@"url"][0];
+                    NSURL * url = [[NSURL alloc]initWithString:strImage];
+                    [cell.menuImageView setImageWithURL:url];
+                    NSLog(@"%@", strImage);
+                    
+                }
+            }
+
+        }
+    }
 
 
-    cell.menuImageView.image = [UIImage imageNamed:@"shrimp.jpg"];
-    cell.foodNameLabel.text = @"油焖大虾";
-    cell.foodValueLable.text = @"100元/份";
     
     return cell;
 
@@ -144,6 +180,18 @@
 //    if (nil != cell) {
 //        [cell selectMenuCell];
 //    }
+}
+
+-(void)selectCellIndex:(NSIndexPath*)indexPath{
+    
+    BOOL bContain = [self.userSelectMenuList containsObject:indexPath];
+    
+    if (!bContain) {
+        [self.userSelectMenuList addObject:indexPath];
+    }else{
+        [self.userSelectMenuList removeObject:indexPath];
+    }
+
 }
 
 

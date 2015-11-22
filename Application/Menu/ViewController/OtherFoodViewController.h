@@ -10,4 +10,6 @@
 
 @interface OtherFoodViewController : UIViewController
 
+@property(strong, nonatomic)NSArray * arrayMenuListData;
+
 @end

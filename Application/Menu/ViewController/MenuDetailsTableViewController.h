@@ -12,6 +12,7 @@
 typedef enum {
     MenuModal_Show = 0,
     MenuModal_Edit,
+    MenuModal_Add,
 }MenuDetailModal;
 
 typedef enum {
@@ -33,10 +34,14 @@ typedef enum {
 @property (weak, nonatomic) IBOutlet UITextField *foodVauleTF;
 @property (weak, nonatomic) IBOutlet UITextField *foodMakeTF;
 @property (weak, nonatomic) IBOutlet UITextField *foodUnitTF;
+@property (weak, nonatomic) IBOutlet UITextView *foodDeclaresTF;
+
+
 @property (weak, nonatomic) IBOutlet PhotoGroupTableViewCell *photoGroupView;
 @property(assign, nonatomic) MenuDetailModal editModal;
+@property(assign, nonatomic)NSDictionary * dicMenuDetailData;
 
 -(void)setMenuDetailEditModal:(MenuDetailModal)editModal;
-
+-(void)editMenuClick;
 
 @end

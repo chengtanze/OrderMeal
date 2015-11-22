@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol MenuChoiceDelegate <NSObject>
+
+-(void)ChoiceMenuIndex:(NSInteger)indexChoice;
+
+@end
+
 @interface OrderHandCollectionViewCell : UICollectionViewCell
 
 @property (weak, nonatomic) IBOutlet UIImageView *backGroupView;
@@ -19,4 +25,6 @@
 
 
 @property (assign, nonatomic) BOOL bChoice;
+
+@property(weak, nonatomic)id<MenuChoiceDelegate> delegate;
 @end

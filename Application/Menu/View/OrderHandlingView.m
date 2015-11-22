@@ -80,7 +80,10 @@
 //item个数
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 10;
+    if (_arrayTableNum != nil) {
+        return _arrayTableNum.count;
+    }
+    return 0;
     
 }
 
@@ -97,6 +100,11 @@
     
     if (!cell) {
         cell = [[OrderHandCollectionViewCell alloc] initWithFrame:CGRectMake(0, 0, 80, 80)];
+    }
+    
+    if (_arrayTableNum != nil) {
+        NSNumber * numIndex = _arrayTableNum[indexPath.row];
+        cell.orderIndexLable.text = [NSString stringWithFormat:@"%ld", (long)numIndex.integerValue];
     }
     
     //cell.im

@@ -11,4 +11,8 @@
 
 @interface OrderHandlingViewController : UIViewController
 
+//订单ID列表
+@property(strong, nonatomic)NSArray * selectOrderMenuList;
+@property(strong, nonatomic) NSMutableArray * arrayTableNum;
+
 @end

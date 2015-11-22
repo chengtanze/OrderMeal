@@ -7,7 +7,9 @@
 //
 
 #import "AppDelegate.h"
-#import "RootTabBarViewController.h"
+
+#import "LoginViewController.h"
+
 
 @interface AppDelegate ()
 
@@ -19,6 +21,14 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
 
+    
+//    UIStoryboard * mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//    LoginViewController * TabBarViewController = [mainStoryboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
+//    
+//
+//    [self.window setRootViewController:TabBarViewController];
+//    
+//    [self.window makeKeyAndVisible];
     
     return YES;
 }

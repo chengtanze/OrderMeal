@@ -10,4 +10,9 @@
 
 @interface MainFoodViewController : UIViewController
 
+@property(strong, nonatomic)NSArray * arrayMenuListData;
+
+@property(strong, nonatomic)NSMutableArray * arrayChoiceMenuListData;
+
+
 @end

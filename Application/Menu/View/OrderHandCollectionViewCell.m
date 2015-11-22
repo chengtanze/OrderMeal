@@ -36,5 +36,7 @@
 
 - (IBAction)choiceClick:(id)sender {
     [self selectMenuCell];
+    
+    
 }
 @end

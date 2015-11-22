@@ -7,9 +7,13 @@
 //
 
 #import "OtherFoodViewController.h"
+#import "MenuDetailsTableViewController.h"
+#import "MenuView.h"
+#import "CommonMacro.h"
+#import "HttpProtocolAPI.h"
 
-@interface OtherFoodViewController ()
-
+@interface OtherFoodViewController ()<MenuSeleteDelegate>
+@property(strong, nonatomic) MenuView *menuView;
 @end
 
 @implementation OtherFoodViewController
@@ -17,12 +21,75 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.view.backgroundColor = [UIColor redColor];
+    [self initViewData];
+    
+    [self downLoadMenuList];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark Init View
+
+-(void)initViewData{
+    [self createMenuView];
+}
+
+
+-(void)createMenuView{
+    
+    CGFloat fHeight = self.view.bounds.size.height - (UIKIT_TABBAR_HEIGHT + NAV_TAB_BAR_HEIGHT + UIKIT_NAVIANDSTATUS_HEIGHT);
+    CGRect rect = CGRectMake(self.view.bounds.origin.x, self.view.bounds.origin.y, self.view.bounds.size.width, fHeight);
+    self.menuView = [[MenuView alloc]initWithFrame:rect];
+    self.menuView.delegate = self;
+    [self.view addSubview:self.menuView];
+}
+
+-(void)selectCellIndex:(NSIndexPath*)indexPath{
+    
+    UIStoryboard * mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    MenuDetailsTableViewController * showViewController = [mainStoryboard instantiateViewControllerWithIdentifier:@"MenuDetailsTableViewController"];
+    
+    showViewController.editModal = MenuModal_Show;
+    showViewController.dicMenuDetailData = self.arrayMenuListData[indexPath.row];
+    
+    [self.navigationController pushViewController:showViewController animated:YES];
+    
+}
+
+-(void)downLoadMenuList{
+    NSMutableDictionary * dic = [[NSMutableDictionary alloc]initWithCapacity:10];
+    [[HttpProtocolAPI sharedClient]getMenuList:dic menuType:0 setBlock:^(NSDictionary *data, NSError *error) {
+        if (data != nil && [self getRetDataState:data]) {
+            
+            self.menuView.arrayMenuListData = self.arrayMenuListData = [data valueForKey:@"data"];
+            
+            if(![_arrayMenuListData respondsToSelector:@selector(objectAtIndex:)])
+            {
+                NSLog(@"is null");
+                _arrayMenuListData = nil;
+            }
+            
+            [self.menuView upDateCollectionView];
+        }
+        
+    }];
+    
+}
+
+-(BOOL)getRetDataState:(NSDictionary *)data{
+    BOOL ret = NO;
+    if (data != nil) {
+        NSNumber * numberState = [data valueForKey:@"state"];
+        NSInteger state = numberState.integerValue;
+        if (state == 0) {
+            ret = YES;
+        }
+    }
+    
+    return ret;
 }
 
 /*

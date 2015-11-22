@@ -18,7 +18,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="06" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I5M-f7-AxZ">
-                        <rect key="frame" x="79.5" y="72.5" width="30.5" height="33.5"/>
+                        <rect key="frame" x="79" y="72" width="30.5" height="33.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="28"/>
                         <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -52,7 +52,7 @@
                 <outlet property="choiceBtn" destination="N74-6d-TdE" id="WIG-RJ-xAw"/>
                 <outlet property="orderIndexLable" destination="I5M-f7-AxZ" id="7F5-6v-3TF"/>
             </connections>
-            <point key="canvasLocation" x="401" y="270"/>
+            <point key="canvasLocation" x="-80" y="253"/>
         </collectionViewCell>
     </objects>
     <resources>

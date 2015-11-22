@@ -24,9 +24,11 @@
 //设置图片路径
 @property(nonatomic, strong)NSMutableArray * picPathArray;
 @property(nonatomic, strong)id<CustromScrollImageViewTapDelegate> delegate;
+@property(nonatomic, assign)NSInteger picType;
 
 -(id)initWithFrame:(CGRect)frame;
 -(id)initWithFrame:(CGRect)frame picArray:(NSArray *)array;
+-(id)initWithFrame:(CGRect)frame picArray:(NSArray *)array type:(NSUInteger)picType; //(0:本地 1:网络)
 -(void)upDataScrollViewPoint;
 
 @end

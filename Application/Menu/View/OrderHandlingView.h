@@ -16,4 +16,5 @@
 
 @interface OrderHandlingView : UIView
 @property(weak, nonatomic) id<OrderHandlingSeleteDelegate> delegate;
+@property(strong, nonatomic) NSArray * arrayTableNum;
 @end

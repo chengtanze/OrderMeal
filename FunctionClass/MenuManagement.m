@@ -7,7 +7,18 @@
 //
 
 #import "MenuManagement.h"
+#import "HttpProtocolAPI.h"
+
 
 @implementation MenuManagement
+
+
+-(BOOL)upLoadNewMenuData:(NSDictionary *)dicMenu{
+    BOOL bRet = NO;
+    
+    
+    
+    return bRet;
+}
 
 @end

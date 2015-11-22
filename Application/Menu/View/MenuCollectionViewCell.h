@@ -23,6 +23,7 @@
 @property (weak, nonatomic) id<MenuCollectionCellDelegate> delegate;
 @property (weak, nonatomic) IBOutlet UIButton *choiceBtn;
 @property (assign, nonatomic) BOOL bChoice;
+@property (strong, nonatomic) NSIndexPath* cellIndexPath;
 
 - (IBAction)foodChoiceBtn:(id)sender;
 
@@ -30,4 +31,7 @@
 
 -(id)initWithFrame:(CGRect)frame;
 -(void)selectMenuCell;
+-(void)choiceMenu:(BOOL)bChoice;
+
+
 @end

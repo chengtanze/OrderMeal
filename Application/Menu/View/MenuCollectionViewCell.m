@@ -86,8 +86,19 @@
     self.choiceBtn.selected = _bChoice;
 }
 
+-(void)choiceMenu:(BOOL)bChoice{
+    
+    self.choiceBtn.selected = bChoice;
+    
+}
+
 - (IBAction)foodChoiceBtn:(id)sender {
     NSLog(@"btn");
     [self selectMenuCell];
+    
+    if (_delegate != nil && [self.delegate respondsToSelector:@selector(selectCellIndex:)]) {
+        [_delegate selectCellIndex:self.cellIndexPath];
+    }
+
 }
 @end
